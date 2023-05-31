@@ -6,7 +6,7 @@
 #include  "bst.h"
 
 BST<std::string> makeTree(const char* filename) {
-BST <std::string> tree;
+ BST <std::string> tree;
     std::ifstream file(filename);
     if (!file) {
         std::cout << "File error!" << std::endl;
@@ -14,14 +14,16 @@ BST <std::string> tree;
     }
     else
     {
-        std::string temp = "";
-        char ch;
-      //  while (!file.eof()) {
-            std::string str;
-            while (std::getline(file, str)){
-                for(int i=0; i<str.length(); ++i)
+        //std::string temp = "";
+       // char ch;
+        while (!file.eof()) {
+            std::string temp = "";
+           // std::string str;
+           // while (std::getline(file, str)){
+                while(true)
                 {
-                    ch = str[i];
+                    char ch;
+                    ch = file.get();
                     // file >> ch;
                     if (ch >= 'a' && ch <= 'z') {
                         temp += ch;
@@ -31,11 +33,13 @@ BST <std::string> tree;
                         temp += ch;
                     }
                     else {
-                        tree.add(temp);
-                        temp = "";
+                       /* tree.add(temp);
+                        temp = "";*/
+                        break;
 
                     }
                 }
+                tree.add(temp);
         }
         return tree;
     }
