@@ -40,7 +40,7 @@ typename BST<T>::Node* BST<T>::addNode(Node* root, const T& value) {
 
 template <typename T>
 void BST <T>::add(const T& value) {
-  root=addNode(root, value);
+  root = addNode(root, value);
 }
 
 template <typename T>
