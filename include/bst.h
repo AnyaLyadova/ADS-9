@@ -93,7 +93,7 @@ int BST <T>::searchTree(Node* root, const T& value) {
 
 template <typename T>
 int BST <T>::depth() {
-	return heightTree(root);
+	return heightTree(root)-1;
 }
 
 template <typename T>
