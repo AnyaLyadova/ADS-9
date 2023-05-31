@@ -15,7 +15,7 @@ class BST {
   int heightTree(Node*);
   int searchTree(Node*, const T&);
  public:
-  BST() :root(nullptr) { };
+  BST() :root(nullptr) { }
   void add(const T&);
   int count;
   int depth();
@@ -33,8 +33,9 @@ typename BST<T>::Node* BST<T>::addNode(Node* root, const T& value) {
       root->left = addNode(root->left, value);
     } else if (root->value < value) {
         root->right = addNode(root->right, value);
-      } else
+      } else {
           root->count++;
+        }
   return root;
 }
 
